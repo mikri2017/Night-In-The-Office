@@ -5,6 +5,7 @@
 #include <SDL3_mixer/SDL_mixer.h>
 #include "MainConstants.h"
 #include "SDLGame.h"
+#include <cmath>
 
 SDLGame::SDLGame()
 {
