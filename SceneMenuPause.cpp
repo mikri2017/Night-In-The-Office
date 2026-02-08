@@ -1,7 +1,7 @@
 #include "SceneMenuPause.h"
 #include <iostream>
 
-SceneMenuPause::SceneMenuPause()
+SceneMenuPause::SceneMenuPause(std::string scene_name) : Scene(scene_name)
 {
     menuPosition.x = 50;
     menuPosition.y = 350;

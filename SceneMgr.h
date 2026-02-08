@@ -5,7 +5,6 @@
 #include <SDL3/SDL.h>
 #include "MainConstants.h"
 #include "Scene.h"
-//#include "SceneGame.h"
 
 class SceneMgr
 {

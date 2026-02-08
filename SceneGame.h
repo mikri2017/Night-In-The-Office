@@ -10,7 +10,7 @@ class SceneGame: public Scene
 private:
     SDL_FRect fr{ 0, 0, 50, 50 };
 public:
-    SceneGame();
+    SceneGame(std::string scene_name);
     ~SceneGame();
     SDL_AppResult app_iter(AppState *as);
     void render_clean(SDL_Renderer *r);

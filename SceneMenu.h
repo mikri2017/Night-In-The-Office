@@ -12,7 +12,7 @@ private:
     Button *btn_new_game, *btn_options,
         *btn_about, *btn_exit;
 public:
-    SceneMenu();
+    SceneMenu(std::string scene_name);
     ~SceneMenu();
     SDL_AppResult app_iter(AppState *as);
     gameReaction process_mouse_motion(float x, float y);

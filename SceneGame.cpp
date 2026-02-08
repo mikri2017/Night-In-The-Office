@@ -3,7 +3,7 @@
 #include <iostream>
 #include <SDL3/SDL.h>
 
-SceneGame::SceneGame()
+SceneGame::SceneGame(std::string scene_name) : Scene(scene_name)
 {
 }
 

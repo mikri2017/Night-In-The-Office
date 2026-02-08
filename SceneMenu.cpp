@@ -1,7 +1,7 @@
 #include "SceneMenu.h"
 #include <iostream>
 
-SceneMenu::SceneMenu()
+SceneMenu::SceneMenu(std::string scene_name) : Scene(scene_name)
 {
     menuPosition.x = 50;
     menuPosition.y = 350;

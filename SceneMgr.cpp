@@ -5,7 +5,8 @@
 
 SceneMgr::SceneMgr()
 {
-    add_scene(new SceneMenu()); // Основное меню
+    // Основное меню
+    add_scene(new SceneMenu("menu_main"));
 }
 
 SceneMgr::~SceneMgr()
@@ -25,7 +26,7 @@ void SceneMgr::add_scene(Scene *scene, bool set_active)
     if(set_active)
     {
         active = scene;
-        active->setPaused(false);
+        active->set_paused(false);
     }
 }
 
@@ -42,13 +43,15 @@ void SceneMgr::delete_all_scenes()
 void SceneMgr::reinit()
 {
     delete_all_scenes();
-    add_scene(new SceneMenu()); // Основное меню
+
+    // Основное меню
+    add_scene(new SceneMenu("menu_main"));
 }
 
 void SceneMgr::start_new_game()
 {
-    add_scene(new SceneGame());
-    add_scene(new SceneMenuPause(), false); // Меню паузы
+    add_scene(new SceneGame("game")); // Игра
+    add_scene(new SceneMenuPause("menu_pause"), false); // Меню паузы
 }
 
 gameReaction SceneMgr::process_mouse_motion(float x, float y)
@@ -66,9 +69,20 @@ gameReaction SceneMgr::process_mouse_button_event(SDL_MouseButtonEvent m_btn_eve
     }
     else if(gr == gameReaction::gr_continue)
     {
-        // Если пауза, возвращаемся в игру
-        active = v_scenes[1];
-        active->setPaused(false);
+        if (active->get_name() == "menu_pause")
+        {
+            // Пауза, возвращаемся в игру
+            for (auto sc : v_scenes)
+            {
+                if (sc->get_name() == "game")
+                {
+                    active = sc;
+                    active->set_paused(false);
+                    break;
+                }
+            }
+        }
+
         gr = gameReaction::gr_ignore;
     }
     else if(gr == gameReaction::gr_main_menu)
@@ -87,22 +101,36 @@ gameReaction SceneMgr::process_keyboard_keydown(SDL_Scancode scancode)
 
     if(scancode == SDL_SCANCODE_ESCAPE)
     {
-        if(active == v_scenes[1])
+        if(active->get_name() == "game")
         {
-            // Если игра - ставим ее на паузу
-            active->setPaused(true);
+            // Ставим игру на паузу
+            active->set_paused(true);
             // Передаем управление в меню паузы
-            active = v_scenes[2];
+            for (auto sc : v_scenes)
+            {
+                if (sc->get_name() == "menu_pause")
+                {
+                    active = sc;
+                    active->set_paused(false);
+                    break;
+                }
+            }
         }
-        else if(active == v_scenes[2])
+        else if(active->get_name() == "menu_pause")
         {
-            // Если пауза, возвращаемся в игру
-            active = v_scenes[1];
-            active->setPaused(false);
+            // Пауза, возвращаемся в игру
+            for (auto sc : v_scenes)
+            {
+                if (sc->get_name() == "game")
+                {
+                    active = sc;
+                    active->set_paused(false);
+                    break;
+                }
+            }
         }
         else // Выходим из игры
             gr = gameReaction::gr_exit;
-
     }
     else
         gr = active->process_keyboard_keydown(scancode);

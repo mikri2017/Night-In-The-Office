@@ -13,7 +13,7 @@ private:
     Button *btn_continue, *btn_options,
         *btn_main_menu, *btn_exit;
 public:
-    SceneMenuPause();
+    SceneMenuPause(std::string scene_name);
     ~SceneMenuPause();
     SDL_AppResult app_iter(AppState *as);
     gameReaction process_mouse_motion(float x, float y);
