@@ -7,6 +7,11 @@
 class SDLGame
 {
 private:
+	// Счетчики для ограничения частоты кадров
+	Uint64 iter_start, iter_end;
+	float iter_diff_ms;
+	Uint32 iter_delay_ms;
+
 	// Менеджер сцен
 	SceneMgr* s_mgr {nullptr};
 

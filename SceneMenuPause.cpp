@@ -3,8 +3,6 @@
 
 SceneMenuPause::SceneMenuPause()
 {
-    delay_time = 50;
-
     menuPosition.x = 50;
     menuPosition.y = 350;
     btn_w = 400;
@@ -66,8 +64,6 @@ SDL_AppResult SceneMenuPause::app_iter(AppState *as)
     btn_exit->draw(as->r);
 
     SDL_RenderPresent(as->r);
-
-    SDL_Delay(delay_time);
 
     return SDL_APP_CONTINUE;
 }

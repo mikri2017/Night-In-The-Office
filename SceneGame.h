@@ -9,7 +9,6 @@ class SceneGame: public Scene
 {
 private:
     SDL_FRect fr{ 0, 0, 50, 50 };
-    int delay_time;
 public:
     SceneGame();
     ~SceneGame();

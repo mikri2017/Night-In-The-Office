@@ -1,10 +1,10 @@
 #include "MainConstants.h"
 #include "SceneGame.h"
 #include <iostream>
+#include <SDL3/SDL.h>
 
 SceneGame::SceneGame()
 {
-    delay_time = 100;
 }
 
 SceneGame::~SceneGame()
@@ -13,7 +13,7 @@ SceneGame::~SceneGame()
 
 SDL_AppResult SceneGame::app_iter(AppState *as)
 {
-    if(!b_paused)
+    if (!b_paused)
     {
         SDL_SetRenderDrawColor(as->r, 255, 255, 255, 255);
         SDL_RenderClear(as->r);
@@ -22,11 +22,10 @@ SDL_AppResult SceneGame::app_iter(AppState *as)
         // Очищаем экран от текущих объектов
         render_clean(as->r);
 
-        // Рисуем новые
+        // Рисуем объекты
 
+        // Отображаем результат на экране
         SDL_RenderPresent(as->r);
-
-        SDL_Delay(delay_time);
     }
 
     return SDL_APP_CONTINUE;
