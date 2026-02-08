@@ -24,9 +24,6 @@ Button::Button()
 Button::~Button()
 {
     delete font_caption;
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "Button end\n";
-#endif // DEBUG_MESSAGES_SHOW
 }
 
 void Button::setCaption(std::string caption)

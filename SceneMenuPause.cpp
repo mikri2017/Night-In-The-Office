@@ -42,9 +42,6 @@ SceneMenuPause::~SceneMenuPause()
     delete btn_options;
     delete btn_main_menu;
     delete btn_exit;
-#ifdef DEBUG_MESSAGES_SHOW
-    std::cout << "SceneMenuPause end\n";
-#endif // DEBUG_MESSAGES_SHOW
 }
 
 SDL_AppResult SceneMenuPause::app_iter(AppState *as)
