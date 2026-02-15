@@ -33,6 +33,10 @@ To build, open folder in VS Code, then press Ctrl + Shift + B and choose build t
 
 Just install libs SDL3, SDL3_image, SDL3_mixer and SDL3_ttf(in some distro's SDL3-ttf).
 
+* Arch Linux, Manjaro:
+  ```sudo pacman -S sdl3 sdl3_image sdl3_ttf```
+  ```yay -S sdl3_mixer-git```
+
 You can use Makefile or from terminal by g++ :)
 
 # Ночью в офисе
@@ -67,5 +71,9 @@ C:\Dev\MinGW\mingw64
 ### На Linux:
 
 Просто установите библиотеки SDL3, SDL3_image, SDL3_mixer и SDL3_ttf(в некоторых дистрибутивах SDL3-ttf).
+
+* Arch Linux, Manjaro:
+  ```sudo pacman -S sdl3 sdl3_image sdl3_ttf```
+  ```yay -S sdl3_mixer-git```
 
 Вы можете использовать Makefile или просто скомпилировать из терминанала командой g++ :)
