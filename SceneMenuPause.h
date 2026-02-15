@@ -2,7 +2,7 @@
 #define SCENEMENUPAUSE_H_INCLUDED
 
 #include "Scene.h"
-#include "Button.h"
+#include "ui/Button.h"
 
 class SceneMenuPause : public Scene
 {

@@ -3,7 +3,7 @@
 
 #include <string>
 #include "Scene.h"
-#include "FontMgr.h"
+#include "ui/FontMgr.h"
 
 class SceneGame: public Scene
 {

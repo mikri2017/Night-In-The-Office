@@ -1,7 +1,7 @@
 #ifndef FONTMGR_H_INCLUDED
 #define FONTMGR_H_INCLUDED
 
-#include "MainConstants.h"
+#include "../MainConstants.h"
 #include <iostream>
 #include <SDL3_ttf/SDL_ttf.h>
 

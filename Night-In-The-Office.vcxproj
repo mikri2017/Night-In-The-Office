@@ -135,9 +135,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Button.cpp" />
-    <ClCompile Include="CheckBox.cpp" />
-    <ClCompile Include="FontMgr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneGame.cpp" />
@@ -145,11 +142,11 @@
     <ClCompile Include="SceneMenuPause.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="SDLGame.cpp" />
+    <ClCompile Include="ui\Button.cpp" />
+    <ClCompile Include="ui\CheckBox.cpp" />
+    <ClCompile Include="ui\FontMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Button.h" />
-    <ClInclude Include="CheckBox.h" />
-    <ClInclude Include="FontMgr.h" />
     <ClInclude Include="MainConstants.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGame.h" />
@@ -157,6 +154,9 @@
     <ClInclude Include="SceneMenuPause.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SDLGame.h" />
+    <ClInclude Include="ui\Button.h" />
+    <ClInclude Include="ui\CheckBox.h" />
+    <ClInclude Include="ui\FontMgr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

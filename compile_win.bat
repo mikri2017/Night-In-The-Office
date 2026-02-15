@@ -7,7 +7,7 @@ PATH=%PATH%;%MINGW_BIN_PATH%
 set PROG_NAME=NightOffice.exe
 
 set CXX=g++.exe
-set COMPILE_FILES=.\*.cpp
+set COMPILE_FILES=.\*.cpp .\ui\*.cpp
 set CFLAGS_DEBUG=-Wall -fexceptions -g
 set CFLAGS_RELEASE=-Wall -fexceptions -O2
 

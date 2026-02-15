@@ -2,7 +2,7 @@
 #define SCENEMENU_H_INCLUDED
 
 #include "Scene.h"
-#include "Button.h"
+#include "ui/Button.h"
 
 class SceneMenu : public Scene
 {
