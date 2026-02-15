@@ -1,4 +1,4 @@
-#define SDL_MAIN_USE_CALLBACKS 1  // Использовать обратные вызовы, вместо main()
+#define SDL_MAIN_USE_CALLBACKS 1  // РСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РѕР±СЂР°С‚РЅС‹Рµ РІС‹Р·РѕРІС‹, РІРјРµСЃС‚Рѕ main()
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3_mixer/SDL_mixer.h>
@@ -36,17 +36,17 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 
     *appstate = as;
 
-    // Создаем объект игры
+    // РЎРѕР·РґР°РµРј РѕР±СЉРµРєС‚ РёРіСЂС‹
     game = new SDLGame();
 
-    // Продолжим выполнение программы
+    // РџСЂРѕРґРѕР»Р¶РёРј РІС‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹
     return SDL_APP_CONTINUE;
 }
 
 SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
 {
     if (event->type == SDL_EVENT_QUIT) {
-        return SDL_APP_SUCCESS; // завершение программы, сообщение ОС об успехе
+        return SDL_APP_SUCCESS; // Р·Р°РІРµСЂС€РµРЅРёРµ РїСЂРѕРіСЂР°РјРјС‹, СЃРѕРѕР±С‰РµРЅРёРµ РћРЎ РѕР± СѓСЃРїРµС…Рµ
     }
 
     return game->app_event(appstate, event);
@@ -59,11 +59,11 @@ SDL_AppResult SDL_AppIterate(void* appstate)
 
 void SDL_AppQuit(void* appstate, SDL_AppResult result)
 {
-    // Закрываем аудио
+    // Р—Р°РєСЂС‹РІР°РµРј Р°СѓРґРёРѕ
     MIX_Quit();
 
-    // Убираем объект игры
+    // РЈР±РёСЂР°РµРј РѕР±СЉРµРєС‚ РёРіСЂС‹
     delete game;
 
-    // SDL освободит окно, рендер для нас
+    // SDL РѕСЃРІРѕР±РѕРґРёС‚ РѕРєРЅРѕ, СЂРµРЅРґРµСЂ РґР»СЏ РЅР°СЃ
 }

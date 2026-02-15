@@ -9,8 +9,8 @@ typedef struct
 {
     SDL_Window *win;
     SDL_Renderer *r;
-    int win_h; // Высота окна
-    int win_w; // Ширина окна
+    int win_h; // Р’С‹СЃРѕС‚Р° РѕРєРЅР°
+    int win_w; // РЁРёСЂРёРЅР° РѕРєРЅР°
 } AppState;
 
 enum gameReaction {
